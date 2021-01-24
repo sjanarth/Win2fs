@@ -1,0 +1,222 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "MainApp.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""MainApp.rc2""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAINDLG DIALOG DISCARDABLE  0, 0, 286, 158
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Win2fs"
+FONT 8, "Tahoma"
+BEGIN
+    CONTROL         "List2",IDC_LIST_PART,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,3,7,279,117
+    PUSHBUTTON      "&Mount",IDC_BUTTON_MOUNT,11,135,46,17
+    PUSHBUTTON      "&Refresh",IDC_BUTTON_REFRESH,65,135,46,17
+    PUSHBUTTON      "&Info",IDC_BUTTON_INFO,119,135,46,17
+    PUSHBUTTON      "E&xit",IDC_BUTTON_CLOSE,227,135,46,17
+    PUSHBUTTON      "&About",IDC_BUTTON_ABOUT,173,135,46,17
+END
+
+IDD_DRVSELDLG DIALOG DISCARDABLE  0, 0, 109, 71
+STYLE WS_POPUP | WS_CAPTION
+CAPTION "Select a drive letter"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,16,47,37,14
+    PUSHBUTTON      "Cancel",IDCANCEL,58,47,37,14
+    LTEXT           "Drive Letter :",IDC_STATIC,12,11,42,8
+    COMBOBOX        IDC_COMBO_DRIVE,58,9,32,49,CBS_DROPDOWNLIST | 
+                    CBS_DISABLENOSCROLL | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Persistent across boots",IDC_CHECK_PERSIST,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,11,28,87,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,10,41,91,1
+    GROUPBOX        "",IDC_STATIC,4,0,102,66
+END
+
+IDD_INFODLG DIALOG DISCARDABLE  0, 0, 202, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,78,93,45,14
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,4,4,194,83
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_DLGFRAME            ICON    DISCARDABLE     "res\\TestApp.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAINDLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 205
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_DRVSELDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 102
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 64
+    END
+
+    IDD_INFODLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "About Win2fs ..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 202, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "About Win2fs"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,156,56,42,14
+    LTEXT           "Win2fs Version 0.1 BETA",IDC_STATIC_VERSION_EX,51,6,138,
+                    8
+    LTEXT           "Copyright (C) 2005 Satish kumar Janarthanan",
+                    IDC_STATIC_COPYRIGHT,51,20,148,8
+    LTEXT           "http://groups.yahoo.com/group/win2fs/",IDC_STATIC_URL,
+                    51,34,130,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,3,51,198,1
+    CONTROL         207,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,6,7,
+                    35,38
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGO                BITMAP  DISCARDABLE     "res\\Win2fs_logo.bmp"
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

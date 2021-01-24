@@ -1,0 +1,231 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "ShellExt.rc2"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""ShellExt.rc2""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "Version.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APPSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APPSTUDIO_HIDDEN_SYMBOLS\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WIN2FS_DRIVEPAGE DIALOG DISCARDABLE  0, 0, 232, 218
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Win2fs"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&About",IDC_ABOUT,186,199,42,15
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,3,192,225,1
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,3,6,225,180
+    PUSHBUTTON      "&Check",IDC_FSCK,135,199,42,15,WS_DISABLED
+    PUSHBUTTON      "&Format",IDC_FORMAT,84,199,42,15,WS_DISABLED
+END
+
+IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 202, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "About Win2fs"
+FONT 8, "Tahoma"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,156,56,42,14
+    LTEXT           "Win2fs Version 0.1 BETA",IDC_STATIC_VERSION_EX,51,6,138,
+                    8
+    LTEXT           "Copyright (C) 2005 Satish kumar Janarthanan",
+                    IDC_STATIC_COPYRIGHT,51,20,148,8
+    LTEXT           "http://groups.yahoo.com/group/win2fs/",IDC_STATIC_URL,
+                    51,34,130,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,3,51,198,1
+    CONTROL         207,IDC_STATIC,"Static",SS_BITMAP | SS_REALSIZEIMAGE,7,7,
+                    35,38
+END
+
+IDD_WIN2FS_FILEPAGE DIALOG DISCARDABLE  0, 0, 232, 218
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Win2fs"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&About",IDC_ABOUT,186,199,42,15
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,192,225,1
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,3,3,225,111
+    GROUPBOX        "User",IDC_STATIC,6,119,66,69
+    CONTROL         "Read",IDC_CHECK_UREAD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,132,33,10
+    CONTROL         "Write",IDC_CHECK_UWRITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,146,33,10
+    CONTROL         "Execute",IDC_CHECK_UEXEC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,160,42,10
+    CONTROL         "SUID",IDC_CHECK_SUID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,14,174,33,8
+    GROUPBOX        "Group",IDC_STATIC,84,119,66,69
+    CONTROL         "Read",IDC_CHECK_GREAD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,94,132,33,10
+    CONTROL         "Write",IDC_CHECK_GWRITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,94,146,33,10
+    CONTROL         "Execute",IDC_CHECK_GEXEC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,94,160,42,10
+    CONTROL         "SGID",IDC_CHECK_SGID,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,94,174,33,8
+    GROUPBOX        "Others",IDC_STATIC,162,119,66,69
+    CONTROL         "Read",IDC_CHECK_OREAD,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,172,132,33,10
+    CONTROL         "Write",IDC_CHECK_OWRITE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,172,146,33,10
+    CONTROL         "Execute",IDC_CHECK_OEXEC,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,172,160,42,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_WIN2FS_DRIVEPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_ABOUTDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_WIN2FS_FILEPAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON    DISCARDABLE     "RES\\Win2fs.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGO                BITMAP  DISCARDABLE     "res\\Win2fs_logo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROJNAME            "Win2fs"
+    IDS_TYPE                "Win2fs Shell Extension file (*)"
+END
+
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

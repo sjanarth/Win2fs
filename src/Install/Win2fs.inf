@@ -1,0 +1,176 @@
+;==============================================================================
+;
+;   Win2fs.inf
+;
+;   Project: http://www.win2fs.org
+;   Author:  Satish kumar Janarthanan, vsat_in@yahoo.com
+;
+;   Copyright (C) 2005, Sathish kumar Janarthanan
+;   
+;   Change history:
+;
+;   05-OCT-2005     Moved rebooting instr to the NSIS script.
+;   21-DEC-2005     Added code to install the shell extensions.
+;                   Removed the file system recognizer and renamed the fs driver
+;                   to Win2fs.sys
+;
+;==============================================================================
+
+;//////////////////////////////////////////////////////////////////////////////
+;                           Strings and defines                               /
+;//////////////////////////////////////////////////////////////////////////////
+
+[Strings]
+Win2fs*Author      = "Satish kumar Janarthanan"
+Win2fs*URL         = "http://www.win2fs.org/"
+Win2fs*eMail       = "vsat_in@yahoo.com"
+Win2fs*Class       " "File System"
+Win2fs*Version     = "0.0.1"
+Win2fs*Key         = "Win2fs"
+
+Win2fs*Key         = "Win2fs"
+Win2fs*Description = "Linux ext2 file system driver"
+Win2fs*Driver      = "Linux ext2 File system driver"
+
+; Non-Localizable Strings
+DELFLG_IN_USE1 = 0x00010000
+
+; Registry Data Types
+REG_SZ                  = 0x00000000
+REG_BINARY              = 0x00000001
+REG_SZ_NOCLOBBER        = 0x00000002
+REG_BINARY_NOCLOBBER    = 0x00000003
+REG_MULTI_SZ            = 0x00010000
+REG_DWORD               = 0x00010001
+REG_MULTI_SZ_NOCLOBBER  = 0x00010002
+REG_DWORD_NOCLOBBER     = 0x00010003
+REG_EXPAND_SZ           = 0x00020000
+REG_EXPAND_SZ_NOCLOBBER = 0x00020002
+
+; Driver and Service Types
+SERVICE_KERNEL_DRIVER                = 0x00000001
+SERVICE_KERNEL_FILESYSTEM_DRIVER     = 0x00000002
+SERVICE_NETWORK_ADAPTER_DRIVER       = 0x00000004
+SERVICE_RECOGNIZER_DRIVER            = 0x00000008   
+SERVICE_WIN32_OWN_PROCESS            = 0x00000010
+SERVICE_WIN32_SHARED_PROCESS         = 0x00000020
+
+; Driver and Service Start Types
+SERVICE_BOOT_START   = 0
+SERVICE_SYSTEM_START = 1
+SERVICE_AUTO_START   = 2
+SERVICE_MANUAL_START = 3
+SERVICE_NEVER_START  = 4   ; (deactivated)
+
+; Driver and Service Error Control
+SERVICE_ERROR_IGNORE   = 0
+SERVICE_ERROR_NORMAL   = 1
+SERVICE_ERROR_SEVERE   = 2
+SERVICE_ERROR_CRITICAL = 3
+
+SVCINST_TAGTOFRONT          = 0x00000001
+SVCINST_ASSOCSERVICE        = 0x00000002
+SVCINST_DELETEEVENTLOGENTRY = 0x00000004
+
+;//////////////////////////////////////////////////////////////////////////////
+;                           Standard Sections                                 /
+;//////////////////////////////////////////////////////////////////////////////
+
+[Version]
+Signature  = "$Windows NT$"
+Provider   = %Win2fs*Author%
+DriverVer  = 10-04-2005
+Class      = System
+
+[ClassInstall32]
+AddReg     = Win2fs.Install.ClassReg
+
+[Manufacturer]
+%Win2fs*Author% = FileSystem
+
+[DefaultInstall.NT]
+AddReg     = Win2fs.Install.AddReg
+CopyFiles  = Win2fs.Files.Sys,Win2fs.Files.Inf,Win2fs.Files.Sys
+DelFiles   = Win2fs.Files.Pnf
+
+[DefaultInstall.NT.Services]
+AddService = "%Win2fs*Key%",%SVCINST_TAGTOFRONT%,Win2fs.Service,Win2fs.EventLog
+
+[DefaultUninstall.NT]
+DelFiles   = Win2fs.Files.Sys,Win2fs.Files.Inf,Win2fs.Files.Pnf
+DelReg     = Win2fs.Remove.DelReg
+;Reboot     ; Moved reboot to the NSIS script      
+
+[DefaultUninstall.NT.Services]
+DelService = "%Win2fs*Key%",%SVCINST_DELETEEVENTLOGENTRY%
+
+[SourceDiskNames]
+; Cabinet file names and associated disks
+; <disk or cabinet number> = <disk description>,[<cabinet filename>],<identifier (unused, must be 0)>,[<relative source path>]
+99 = "%Win2fs*Description%",,0000-0000,"."
+
+[SourceDiskFiles]
+; <filename> = <disk or cabinet number>,[<subdirectory>],[<filename>],[<size>],[<checksum>]
+; Note: <filename> is neither on a disk nor in a cabinet if <disk or cabinet number> is 0
+Win2fs.inf   = 99
+Win2fs.sys   = 99
+
+[DestinationDirs]
+Win2fs.Files.Sys = 12   ; %SystemRoot%\Drivers
+Win2fs.Files.Inf = 17   ; %SystemRoot%\Inf
+Win2fs.Files.Pnf = 17   ; %SystemRoot%\Pnf
+
+;//////////////////////////////////////////////////////////////////////////////
+;                             Custom Sections                                 /
+;//////////////////////////////////////////////////////////////////////////////
+
+[FileSystem]
+%Win2fs*Description% = DefaultInstall,%Win2fs*Key%
+
+[Win2fs.Install.ClassReg]
+HKR,,,%REG_SZ%,"%Win2fs*Class%"
+HKR,,"Icon",%REG_SZ%,"-5"
+
+[Win2fs.Install.AddReg]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","DisplayName",%REG_SZ%,"%Win2fs*Description%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","DisplayVersion",%REG_SZ%,"%Win2fs*Version%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","HelpLink",%REG_SZ%,""
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","InstallLocation",%REG_SZ%,"%12%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","InstallSource",%REG_SZ%,"%01%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","Publisher",%REG_SZ%,"%Win2fs*Author% <%Win2fs*eMail%>"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","UninstallString",%REG_SZ%,"%11%\RunDll32.Exe %11%\SetupAPI.Dll,InstallHinfSection DefaultUninstall.NTx86 4 %17%\Win2fs.Inf"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\%Win2fs*Key%","URLInfoAbout",%REG_SZ%,"%Win2fs*URL%"
+
+[Win2fs.Remove.DelReg]
+HKLM,"System\CurrentControlSet\Services\%Win2fs*Key%"
+
+[Win2fs.Files.Sys]
+Win2fs.sys,,,%DELFLG_IN_USE1%
+
+[Win2fs.Files.Inf]
+Win2fs.inf,,,%DELFLG_IN_USE1%
+
+[Win2fs.Files.Pnf]
+Win2fs.pnf,,,%DELFLG_IN_USE1%
+
+;//////////////////////////////////////////////////////////////////////////////
+;                             File system driver                              /
+;//////////////////////////////////////////////////////////////////////////////
+
+[Win2fs.Service]
+DisplayName    = "%Win2fs*Driver%"
+ServiceType    = %SERVICE_KERNEL_FILESYSTEM_DRIVER%
+StartType      = %SERVICE_MANUAL_START%
+ErrorControl   = %SERVICE_ERROR_NORMAL%
+ServiceBinary  = "%12%\Win2fs.sys"
+AddReg         = Win2fs.Service.Reg
+
+[Win2fs.Service.Reg]
+;HKR,"Parameters","WritingSupport",%REG_DWORD%,0x00000000
+
+[Win2fs.EventLog]
+AddReg = Win2fs.EventLog.Reg
+
+[Win2fs.EventLog.Reg]
+HKR,,"EventMessageFile",%REG_EXPAND_SZ%,"%%SystemRoot%%\System32\IoLogMsg.Dll"
+HKR,,"TypesSupported",%REG_DWORD%,7

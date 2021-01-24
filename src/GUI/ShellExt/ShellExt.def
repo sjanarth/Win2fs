@@ -1,0 +1,11 @@
+; ShellExt.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Win2fs"
+DESCRIPTION  Win2fs Shell extensions
+
+EXPORTS
+    ; Explicit exports can go here
+	DllCanUnloadNow PRIVATE
+	DllGetClassObject PRIVATE
+	DllRegisterServer PRIVATE
+	DllUnregisterServer PRIVATE

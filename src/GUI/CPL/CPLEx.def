@@ -1,0 +1,5 @@
+LIBRARY		Win2fs
+DESCRIPTION 'Win2fs Control Panel Applet'
+EXPORTS
+	CPlApplet
+

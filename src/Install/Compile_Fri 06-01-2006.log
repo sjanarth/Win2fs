@@ -1,0 +1,98 @@
+MakeNSIS v2.05 - Copyright 1999-2005 Nullsoft, Inc.
+
+Portions Copyright (C) 1995-1998 Jean-loup Gailly and Mark Adler (zlib).
+Portions Copyright (C) 1996-2002 Julian R Seward (bzip2).
+Portions Copyright (C) 1999-2003 Igor Pavlov (lzma).
+
+Contributors: nnop@newmail.ru, Ryan Geiss, Andras Varga, Drew Davidson, Peter Windridge, Dave Laundon, Robert Rainwater, Yaroslav Faybishenko, Jeff Doozan, Amir Szekely, Ximon Eighteen, et al.
+
+Processing config: 
+Processing plugin dlls: "C:\Progra~1\NSIS\Plugins\*.dll"
+ - advsplash::show
+ - Banner::destroy
+ - Banner::getWindow
+ - Banner::show
+ - BgImage::AddImage
+ - BgImage::AddText
+ - BgImage::Clear
+ - BgImage::Destroy
+ - BgImage::Redraw
+ - BgImage::SetBg
+ - BgImage::SetReturn
+ - BgImage::Sound
+ - Dialer::AttemptConnect
+ - Dialer::AutodialHangup
+ - Dialer::AutodialOnline
+ - Dialer::AutodialUnattended
+ - Dialer::GetConnectedState
+ - InstallOptions::dialog
+ - InstallOptions::initDialog
+ - InstallOptions::show
+ - LangDLL::LangDialog
+ - Math::Script
+ - nsExec::Exec
+ - nsExec::ExecToLog
+ - nsExec::ExecToStack
+ - nsisdl::download
+ - nsisdl::download_quiet
+ - splash::show
+ - StartMenu::Select
+ - System::Alloc
+ - System::Call
+ - System::Copy
+ - System::Free
+ - System::Get
+ - System::Int64Op
+ - System::Store
+ - TypeLib::GetLibVersion
+ - TypeLib::Register
+ - TypeLib::UnRegister
+ - UserInfo::GetAccountType
+ - UserInfo::GetName
+ - VPatch::vpatchfile
+
+!define: "MUI_INSERT_NSISCONF"=""
+
+Changing directory to: "E:\Projects\Win2fs\Code\Install"
+
+Processing script file: "Win2fs.nsi"
+!define: "VERSION"="0.0.1"
+!define: "BINDIR"="E:\Projects\Win2fs\Bin"
+!define: "S_NOSUPPORT"="This version of Windows is not currently supported."
+!define: "S_COMPLETED"="Install Completed."
+!define: "S_UNINSTALL"="This will uninstall Win2fs from your system."
+!define: "S_REVIEWLICENSE"="Please review the following license agreement before proceeding."
+!define: "S_RESTART"="It is highly recommended you restart your computer to complete the uninstall.
+
+Do you want to restart your computer now?"
+!define: "S_MUSTRESTART"="You must restart your computer for the changes to take effect.
+
+Do you want to restart your computer now?"
+Name: "Win2fs"
+BGGradient: 0x9995C4->0x000000 (text=0xFFFFFF)
+BrandingText: "Win2fs Version 0.0.1"
+CRCCheck: On
+InstProgressFlags: smooth=1, colored=0
+LicenseData: "E:\Projects\Win2fs\Bin\GPL.TXT"
+OutFile: "E:\Projects\Win2fs\Bin\Setup.exe"
+InstallDir: "$PROGRAMFILES\Win2fs"
+CompletedText: "Install Completed."
+UninstallText: "This will uninstall Win2fs from your system." ""
+LicenseText: "Please review the following license agreement before proceeding." ""
+Section: "Install"
+SetAutoClose: False
+SetCompress: Auto
+SetOverwrite: IfNewer
+Call "GetWindowsVersion"
+DetailPrint: "System: $1"
+SetOutPath: "$INSTDIR"
+StrCmp "$0" "2000" equal=Win2000, nonequal=
+StrCmp "$0" "XP" equal=WinXP, nonequal=WinNotSupported
+File: "Win2fs.inf" [compress] 1877/6588 bytes
+File: "Win2fs.sys" [compress] 32819/63681 bytes
+File: "Win2fs.dll" [compress] 20667/57344 bytes
+File: "Win2fs.cpl" [compress] 13046/40960 bytes
+File: "E:\Projects\Win2fs\Bin\Release\Win2fs.exe" -> no files found.
+Usage: File [/nonfatal] [/a] ([/r] [/x filespec [...]] filespec [...] |
+   /oname=outfile one_file_only)
+Error in script "Win2fs.nsi" on line 81 -- aborting creation process

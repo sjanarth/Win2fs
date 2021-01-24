@@ -1,0 +1,23 @@
+INCLUDES=$(BASEDIR)\inc;$(BASEDIR)\inc\ddk\wxp;..\inc;.;
+
+# Name and type of the output file:
+TARGETNAME=Win2fs
+TARGETTYPE=DRIVER
+TARGETPATH=.\$(DDKBUILDENV)
+
+# We need these libs to link.
+TARGETLIBS=$(SDK_LIB_PATH)\libcmt.lib
+
+# Creates a file used by Visual Studio to navigate the source code.
+BROWSER_INFO=1
+BROWSERFILE=$(TARGETNAME).bsc -n
+
+RCNOFONTMAP=TRUE
+
+# The source code:
+SOURCES=Win2fs.rc												                    \
+        fastio.c     	memory.c     	close.c      	dirctl.c     	except.c    \
+        read.c       	util.c       	devctl.c     	volinfo.c    	lock.c      \
+        cleanup.c    	block.c      	cmcb.c       	fileinfo.c   	dispatch.c  \
+        init.c       	debug.c      	create.c     	ext2.c       	fsctl.c     \
+        write.c      	flush.c      	shutdown.c

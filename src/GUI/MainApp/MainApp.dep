@@ -1,0 +1,84 @@
+# Microsoft Developer Studio Generated Dependency File, included by MainApp.mak
+
+.\CDrvSelDlg.cpp : \
+	".\CDrvSelDlg.h"\
+	".\Precompile.h"\
+	".\Strings.h"\
+	".\Version.h"\
+	"c:\program files\dxsdk\include\basetsd.h"\
+	"d:\winddk\inc\basetsd.h"\
+	"d:\winddk\inc\guiddef.h"\
+	"d:\winddk\inc\propidl.h"\
+	"d:\winddk\inc\tvout.h"\
+	{$(INCLUDE)}"version_global.h"\
+	{$(INCLUDE)}"win2fs.h"\
+	
+
+.\CInfoDlg.cpp : \
+	".\CInfoDlg.h"\
+	".\Precompile.h"\
+	".\Strings.h"\
+	".\Utils.h"\
+	".\Version.h"\
+	"c:\program files\dxsdk\include\basetsd.h"\
+	"d:\winddk\inc\basetsd.h"\
+	"d:\winddk\inc\guiddef.h"\
+	"d:\winddk\inc\propidl.h"\
+	"d:\winddk\inc\tvout.h"\
+	{$(INCLUDE)}"version_global.h"\
+	{$(INCLUDE)}"win2fs.h"\
+	
+
+.\CMainApp.cpp : \
+	".\CMainApp.h"\
+	".\CMainDlg.h"\
+	".\Precompile.h"\
+	".\Strings.h"\
+	".\Utils.h"\
+	".\Version.h"\
+	"c:\program files\dxsdk\include\basetsd.h"\
+	"d:\winddk\inc\basetsd.h"\
+	"d:\winddk\inc\guiddef.h"\
+	"d:\winddk\inc\propidl.h"\
+	"d:\winddk\inc\tvout.h"\
+	{$(INCLUDE)}"version_global.h"\
+	{$(INCLUDE)}"win2fs.h"\
+	
+
+.\CMainDlg.cpp : \
+	".\CDrvSelDlg.h"\
+	".\CInfoDlg.h"\
+	".\CMainDlg.h"\
+	".\Precompile.h"\
+	".\Strings.h"\
+	".\Utils.h"\
+	".\Version.h"\
+	"c:\program files\dxsdk\include\basetsd.h"\
+	"d:\winddk\inc\basetsd.h"\
+	"d:\winddk\inc\guiddef.h"\
+	"d:\winddk\inc\propidl.h"\
+	"d:\winddk\inc\tvout.h"\
+	{$(INCLUDE)}"version_global.h"\
+	{$(INCLUDE)}"win2fs.h"\
+	
+
+.\MainApp.rc : \
+	".\MainApp.rc2"\
+	".\RES\TestApp.ICO"\
+	".\Version.h"\
+	{$(INCLUDE)}"version_global.h"\
+	
+
+.\Utils.cpp : \
+	".\Precompile.h"\
+	".\Strings.h"\
+	".\Utils.h"\
+	".\Version.h"\
+	"c:\program files\dxsdk\include\basetsd.h"\
+	"d:\winddk\inc\basetsd.h"\
+	"d:\winddk\inc\guiddef.h"\
+	"d:\winddk\inc\propidl.h"\
+	"d:\winddk\inc\tvout.h"\
+	{$(INCLUDE)}"version_global.h"\
+	{$(INCLUDE)}"win2fs.h"\
+	

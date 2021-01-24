@@ -1,0 +1,80 @@
+# Microsoft Developer Studio Generated Dependency File, included by ShellExt.mak
+
+.\CAboutDlg.cpp : \
+	".\CAboutDlg.h"\
+	".\Other\CHyperLink.h"\
+	".\StdAfx.h"\
+	
+
+.\CGenericPage.cpp : \
+	".\CGenericPage.h"\
+	".\StdAfx.h"\
+	
+
+.\CWin2fsApp.cpp : \
+	".\CWin2fsApp.h"\
+	".\CWin2fsShellExt.h"\
+	".\Other\Registry.h"\
+	".\StdAfx.h"\
+	
+
+.\CWin2fsDrivePage.cpp : \
+	"..\..\inc\linux\ext2_fs.h"\
+	"..\..\inc\linux\types.h"\
+	".\CAboutDlg.h"\
+	".\CGenericPage.h"\
+	".\CWin2fsDrivePage.h"\
+	".\Other\CHyperLink.h"\
+	".\StdAfx.h"\
+	
+
+.\CWin2fsFilePage.cpp : \
+	"..\..\inc\linux\ext2_fs.h"\
+	"..\..\inc\linux\types.h"\
+	".\CAboutDlg.h"\
+	".\CGenericPage.h"\
+	".\CWin2fsFilePage.h"\
+	".\Other\CHyperLink.h"\
+	".\StdAfx.h"\
+	
+
+.\CWin2fsFolderPage.cpp : \
+	"..\..\inc\linux\ext2_fs.h"\
+	"..\..\inc\linux\types.h"\
+	".\CAboutDlg.h"\
+	".\CGenericPage.h"\
+	".\CWin2fsFolderPage.h"\
+	".\Other\CHyperLink.h"\
+	".\StdAfx.h"\
+	
+
+.\CWin2fsShellExt.cpp : \
+	".\CGenericPage.h"\
+	".\CWin2fsApp.h"\
+	".\CWin2fsDrivePage.h"\
+	".\CWin2fsFilePage.h"\
+	".\CWin2fsFolderPage.h"\
+	".\CWin2fsShellExt.h"\
+	".\StdAfx.h"\
+	
+
+.\ShellExt.rc : \
+	".\res\Win2fs.ico"\
+	".\res\Win2fs_logo.bmp"\
+	".\ShellExt.rc2"\
+	".\Version.h"\
+	{$(INCLUDE)}"version_global.h"\
+	
+
+.\StdAfx.cpp : \
+	".\StdAfx.h"\
+	
+
+.\Other\CHyperLink.cpp : \
+	".\Other\CHyperLink.h"\
+	
+
+.\Other\Registry.cpp : \
+	".\Other\Registry.h"\
+	".\StdAfx.h"\
+	
