@@ -22,9 +22,12 @@ Win2fs started as a university project in late 2001 (originally hosted at http:/
 	Support for the Large File (4GB+) API
 
 ## Screenshots
-
-![Main Window](/images/mainapp.jpg)
-![Properties Dialog](/images/proppage.jpg)
-![Windows File Explorer](/images/explorer.jpg)
-
-
+<p align="center">
+  <img alt="Main Window" src="http://github.com/sjanarth/win2fs/images/mainapp.jpg" />
+</p>
+<p align="center">
+  <img alt="Properties Dialog" src="http://github.com/sjanarth/win2fs/images/proppage.jpg" />
+</p>
+<p align="center">
+  <img alt="Windows File Explorer" src="http://github.com/sjanarth/win2fs/images/explorer.jpg" />
+</p>
