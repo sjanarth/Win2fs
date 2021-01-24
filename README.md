@@ -6,3 +6,25 @@ The problem of sharing files across the Linux and Windows operating systems has 
 With Win2fs installed, ext2 volumes are assigned drive letters like G:, etc (also called 'mount points') and all running applications can directly access the files on these file-systems. Files and directories appear in all the file open/save dialogs of all applications and user don't have to copy files back and forth between Linux and Windows file-systems.
 
 Win2fs started as a university project in late 2001 (originally hosted at http://win2fs.sourceforge.net/) and has since grown into a stable product fully integrated with Windows Storage subsystems.
+
+## Features
+	Support for most Windows operating systems
+	Complete read and write support to almost all releases of ext2/3/4fs
+	Supports Windows style Fast IO (better caching and hence better performance)
+	Support for USB disk drives
+	Completely automated install and uninstall tools
+	Option to format and check the volume for consistency
+	Option to automatically mount selected volumes
+	Support for all block sizes
+	Handling of symbolic links
+	Support for the traditional UNIX style three tier file permissions
+	Keeping track of file-system state
+	Support for the Large File (4GB+) API
+
+## Screenshots
+
+![Main Window](/images/mainapp.jpg)
+![Properties Dialog](/images/proppage.jpg)
+![Windows File Explorer](/images/explorer.jpg)
+
+
