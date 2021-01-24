@@ -23,11 +23,11 @@ Win2fs started as a university project in late 2001 (originally hosted at http:/
 
 ## Screenshots
 <p align="center">
-  <img alt="Main Window" src="http://github.com/sjanarth/win2fs/images/mainapp.jpg" />
+  <img alt="Main Window" src="http://github.com/sjanarth/win2fs/tree/master/images/mainapp.jpg" />
 </p>
 <p align="center">
-  <img alt="Properties Dialog" src="http://github.com/sjanarth/win2fs/images/proppage.jpg" />
+  <img alt="Properties Dialog" src="http://github.com/sjanarth/win2fs/tree/master/images/proppage.jpg" />
 </p>
 <p align="center">
-  <img alt="Windows File Explorer" src="http://github.com/sjanarth/win2fs/images/explorer.jpg" />
+  <img alt="Windows File Explorer" src="http://github.com/sjanarth/win2fs/tree/master/images/explorer.jpg" />
 </p>
